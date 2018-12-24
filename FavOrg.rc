@@ -1,0 +1,562 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\FavOrg.ico"
+IDR_FAVORGTYPE          ICON    DISCARDABLE     "res\\FavOrg.ico"
+IDI_CHECKMARK           ICON    DISCARDABLE     "res\\Checkmrkg.ico"
+IDI_PAGEMOVED           ICON    DISCARDABLE     "res\\Checkmrkr.ico"
+IDI_ACCESSDENIED        ICON    DISCARDABLE     "res\\Locked.ico"
+IDI_PAGENONE            ICON    DISCARDABLE     "res\\NoPage.ico"
+IDI_SITENONE            ICON    DISCARDABLE     "res\\NoSite.ico"
+IDI_QUESTIONMARK        ICON    DISCARDABLE     "res\\question.ico"
+IDI_RESET               ICON    DISCARDABLE     "res\\reset.ico"
+IDI_TIMEOUT             ICON    DISCARDABLE     "res\\Timer.ico"
+IDI_PAGEMOVED_UPDATED   ICON    DISCARDABLE     "res\\Checkmrkb.ico"
+IDI_FOLDERSEL           ICON    DISCARDABLE     "res\\FolderSel.ico"
+IDI_FOLDER              ICON    DISCARDABLE     "res\\Folder.ico"
+IDI_INPROCESS           ICON    DISCARDABLE     "res\\inproc.ico"
+IDI_HOURGLASS           ICON    DISCARDABLE     "res\\hourglass.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Generate report...",         IDC_GENERATELOG
+        MENUITEM "&View report...",             IDC_VIEWREPORT
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "Fa&vorite"
+    BEGIN
+        MENUITEM "&Pick icon",                  IDC_PICKICON
+        MENUITEM "&Assign picked icon",         IDC_ASSIGNTHIS
+        MENUITEM "Assign &custom icon...",      IDC_ASSIGNCUST
+        MENUITEM SEPARATOR
+        MENUITEM "&Edit URL...",                IDC_EDITURL
+        MENUITEM SEPARATOR
+        POPUP "Set/&View status"
+        BEGIN
+            MENUITEM "&Not checked yet",            IDC_MNU_UNCHECKED
+            MENUITEM "&URL is valid",               IDC_MNU_CHECKED
+            MENUITEM "Page temporarily &moved",     IDC_MNU_MOVED
+            MENUITEM "M&oved && updated",           IDC_MNU_MOVED_UPDATED
+            MENUITEM "&Page not found",             IDC_MNU_PAGENONE
+            MENUITEM "S&ite not found",             IDC_MNU_SITENONE
+            MENUITEM "&Timeout",                    IDC_MNU_TIMEOUT
+            MENUITEM "&Access denied",              IDC_MNU_ACCESSDENIED
+            MENUITEM "Un&known",                    IDC_MNU_QUESTION
+            MENUITEM "R&eset to root",              IDC_MNU_RESET
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Display info...",            IDC_DISPINFO
+        MENUITEM SEPARATOR
+        MENUITEM "&Send to Recycle Bin",        IDC_REMOVE
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "&Show legend",                IDC_SHOWLEGEND
+        MENUITEM "&Delete by status...",        IDC_DELETEBYSTATE
+        MENUITEM "&Options...",                 IDC_OPTIONS
+    END
+    POPUP "T&ree"
+    BEGIN
+        MENUITEM "&Expand all",                 IDC_EXPANDALL
+        MENUITEM "&Collapse all",               IDC_COLLAPSEALL
+        MENUITEM "E&xpand current",             IDC_EXPANDCURRENT
+        MENUITEM "C&ollapse current",           IDC_COLLAPSECURRENT
+        MENUITEM SEPARATOR
+        MENUITEM "&Select none",                IDC_SELECTNONE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Help",                       IDC_FAVORGHELP
+        MENUITEM "&About FavOrg...",            ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 122
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About FavOrg"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,10,20,20
+    LTEXT           "FavOrg Version 1.4\n\nCopyright (c) 2000, Ziff Davis Media, Inc.\nAll rights reserved.\n\nFirst Published in PC Magazine, US Edition, November 7, 2000.\n\nProgrammer: Patrick Philippot",
+                    IDC_STATIC,40,10,183,81,SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,93,99,50,14,WS_GROUP
+END
+
+IDD_FAVORG_FORM DIALOGEX 0, 0, 330, 180
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Your favorite Web sites",IDC_STATIC,7,7,81,11
+    LTEXT           "",IDC_FAVNUMBER,99,7,65,11,NOT WS_GROUP
+    CONTROL         "Tree1",IDC_FAVTREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_EDITLABELS | TVS_DISABLEDRAGDROP | 
+                    TVS_INFOTIP | WS_BORDER | WS_GROUP | WS_TABSTOP,7,21,196,
+                    122,WS_EX_CLIENTEDGE
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",PBS_SMOOTH | 
+                    WS_BORDER,7,143,196,8
+    PUSHBUTTON      "&Refresh tree",IDC_REFRESH,7,160,92,14
+    PUSHBUTTON      "Reset dead &links to root",IDC_RESETTOROOT,112,160,92,
+                    14
+    PUSHBUTTON      "&Go!",IDC_GO,212,21,108,16,WS_GROUP
+    PUSHBUTTON      "&Cancel action",IDC_CANCELACTION,212,41,108,16
+    GROUPBOX        "Go! options",IDC_OPTIONGROUP,212,69,108,64,WS_GROUP
+    CONTROL         "&Find favicons",IDC_FINDFAVICONS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,221,81,91,10
+    CONTROL         "&Update redirected links",IDC_ALLOWUPDATE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,221,98,91,10
+    CONTROL         "Do not overwrite &icons",IDC_NOOVERWRITE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,221,115,91,10
+END
+
+IDD_LEGEND DIALOGEX 0, 0, 208, 124
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "FavOrg status legend"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_UNCHECKED,IDC_STATIC,13,21,20,20,0,WS_EX_TRANSPARENT
+    LTEXT           "Not checked yet",IDC_STATIC,38,21,66,10,NOT WS_GROUP
+    ICON            IDI_SITENONE,IDC_STATIC,115,21,20,20,0,WS_EX_TRANSPARENT
+    LTEXT           "Site not found",IDC_STATIC,141,21,55,10,NOT WS_GROUP
+    ICON            IDI_CHECKMARK,IDC_STATIC,13,33,20,20,0,WS_EX_TRANSPARENT
+    LTEXT           "URL is valid",IDC_STATIC,38,33,66,10,NOT WS_GROUP
+    ICON            IDI_TIMEOUT,IDC_STATIC,115,33,20,20,0,WS_EX_TRANSPARENT
+    LTEXT           "Timeout",IDC_STATIC,141,33,48,10,NOT WS_GROUP
+    ICON            IDI_PAGEMOVED,IDC_STATIC,13,45,20,20,0,WS_EX_TRANSPARENT
+    LTEXT           "Page temp. moved",IDC_STATIC,38,45,66,10,NOT WS_GROUP
+    ICON            IDI_QUESTIONMARK,IDC_STATIC,115,45,20,20,0,
+                    WS_EX_TRANSPARENT
+    LTEXT           "Status unknown",IDC_STATIC,141,45,52,10,NOT WS_GROUP
+    ICON            IDI_PAGEMOVED_UPDATED,IDC_STATIC,13,57,20,20,0,
+                    WS_EX_TRANSPARENT
+    LTEXT           "Moved && updated",IDC_STATIC,38,57,66,10,NOT WS_GROUP
+    ICON            IDI_ACCESSDENIED,IDC_STATIC,115,57,20,20,0,
+                    WS_EX_TRANSPARENT
+    LTEXT           "Access denied",IDC_STATIC,141,57,54,10,NOT WS_GROUP
+    ICON            IDI_PAGENONE,IDC_STATIC,13,69,20,20,0,WS_EX_TRANSPARENT
+    LTEXT           "Page not found",IDC_STATIC,38,69,66,10,NOT WS_GROUP
+    ICON            IDI_RESET,IDC_STATIC,115,69,20,20,0,WS_EX_TRANSPARENT
+    LTEXT           "Reset to root",IDC_STATIC,141,69,54,10,NOT WS_GROUP
+    GROUPBOX        "Legend",IDC_STATIC,7,9,194,97,WS_GROUP
+    ICON            IDI_INPROCESS,IDC_STATIC,13,81,20,20,0,WS_EX_TRANSPARENT
+    LTEXT           "Search in progress",IDC_STATIC,38,81,66,10,NOT WS_GROUP
+END
+
+IDD_BYSTATE DIALOGEX 0, 0, 242, 122
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Delete by status"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Select status of items to be deleted",IDC_STATIC,7,3,
+                    169,90,WS_GROUP
+    ICON            IDI_SITENONE,IDC_STATIC,14,21,20,20,0,WS_EX_TRANSPARENT
+    CONTROL         "&Site not found",IDC_CHECK_SITENONE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,49,21,68,9
+    LTEXT           "Static",IDC_SITENOTFOUND_COUNT,123,21,45,9,NOT WS_GROUP
+    ICON            IDI_PAGENONE,IDC_STATIC,14,37,20,20,0,WS_EX_TRANSPARENT
+    CONTROL         "&Page not found",IDC_CHECK_PAGENONE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,49,37,68,9
+    LTEXT           "Static",IDC_PAGENOTFOUND_COUNT,123,37,45,9,NOT WS_GROUP
+    ICON            IDI_TIMEOUT,IDC_STATIC,14,53,20,20,0,WS_EX_TRANSPARENT
+    CONTROL         "&Timeout",IDC_CHECK_TIMEOUT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,49,53,68,9
+    LTEXT           "Static",IDC_TIMEOUT_COUNT,123,53,45,9,NOT WS_GROUP
+    ICON            IDI_ACCESSDENIED,IDC_STATIC,14,69,20,20,0,
+                    WS_EX_TRANSPARENT
+    CONTROL         "&Access denied",IDC_CHECK_ACCESSDENIED,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,49,69,68,9
+    LTEXT           "Static",IDC_ACCESSDENIED_COUNT,123,69,45,9,NOT WS_GROUP
+    DEFPUSHBUTTON   "OK",IDOK,186,7,50,14,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,186,24,50,14
+    PUSHBUTTON      "&Help",IDHELP,186,41,50,14
+    LTEXT           "Item(s) currently selected :",IDC_STATIC,7,105,83,10
+    LTEXT           "12000",IDC_COUNT,91,105,21,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_LEGEND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 117
+    END
+
+    IDD_BYSTATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 115
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,4,0,0
+ PRODUCTVERSION 1,4,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "FavOrg - Internet Explorer companion program\0"
+            VALUE "CompanyName", "Ziff Davis Media, Inc.\0"
+            VALUE "FileDescription", "FavOrg utility\0"
+            VALUE "FileVersion", "1, 4, 0, 0\0"
+            VALUE "InternalName", "FavOrg\0"
+            VALUE "LegalCopyright", "Copyright © 2000-2002, Ziff Davis Media, Inc.\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "FavOrg.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "FavOrg Application\0"
+            VALUE "ProductVersion", "1, 4, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS DISCARDABLE 
+BEGIN
+    VK_F1,          ID_HELP,                VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "FavOrg\n\nFavOrg\n\n\nFavOrg.Document\nFavOrg Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "FavOrg"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    IDS_FAVORITES           "Favorites (%s)"
+    IDS_CLOSECONNECTION     "Close active Internet connection?"
+    IDS_MSG_FROMFOLDER      "Adding shortcuts from %s"
+    IDS_MSG_FAVNAME         "Processing %s"
+    IDS_MSG_ICONFOUND       "Icon found for this site!"
+    IDS_MSG_UPDATINGDEADLINK "Updating dead link to %s"
+    IDS_MSG_CHECKURL        "Checking %s"
+    IDS_MSG_ACCESSDENIED    "Access denied!"
+    IDS_MSG_TIMEOUT         "Timeout while checking URL!"
+    IDS_MSG_NOSITE          "%s cannot be reached!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_GENERATELOG         "Generate an information file"
+    IDC_PICKICON            "Pick icon of selected item for further assignment"
+    IDC_ASSIGNTHIS          "Assign picked icon to selected items"
+    IDC_CUSTOMICON          "Assign a user-defined icon to selected items"
+    IDC_REMOVE              "Send selected items to Recycle Bin"
+    IDC_SHOWLEGEND          "Give information about the status icons"
+    IDC_DELETEBYSTATE       "Delete items by status"
+    IDC_OPTIONS             "Program option settings"
+    IDC_FAVORGHELP          "Online help"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_EDITURL             "Change URL of selected item"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MSG_UNKNOWN         "Unidentified problem on %s!"
+    IDS_MSG_OK              "Checked %s !"
+    IDS_MSG_REDIRWITHUPDATE "Redirected URL. Shortcut updated!"
+    IDS_MSG_REDIR           "Redirected URL!"
+    IDS_MSG_NOTFOUND        "%s not found!"
+    IDS_NUMFMT              "(%d shortcuts)"
+    IDS_DELETESELALERT      "You are about to delete all the currently selected items in your Favorites folder. Proceed anyway?  Note that shortcuts located on a network drive will not go to the Recycle Bin."
+    IDS_ASSIGNSELALERT      "You are about to assign a new icon to the selected shortcuts. Proceed anyway?"
+    IDS_MSG_SELCOUNT        "Counting selected items : %s"
+    IDS_MSG_LOGERROR        "Error while writing log : %s"
+    IDS_STATUS_UNKNOWN      "Status unknown"
+    IDS_STATUS_CHECKED      "URL is valid"
+    IDS_STATUS_PAGENOTFOUND "Page not found"
+    IDS_STATUS_PAGEMOVED    "Page temporarily moved"
+    IDS_STATUS_TIMEOUT      "Timeout"
+    IDS_STATUS_SITENOTFOUND "Site not found"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STATUS_ACCESSDENIED "Acces denied"
+    IDS_STATUS_MOVEDUPDATED "Page moved - Link updated"
+    IDS_STATUS_UNCHECKED    "Not checked yet"
+    IDS_STATUS_RESET        "Reset to root"
+    IDS_DELETEALLALERT      "You're about to delete the whole Favorites folder. Are you sure that you wan to do that?"
+    IDS_NETWORKALERT        "Using a Favorites folder shared over the network is unsafe. FavOrg has not been designed to work with such a folder. We strongly recommend exiting FavOrg after the Favorites folder has been loaded."
+    IDS_RASALERTPROMPT      "RASAPI32.DLL could not be loaded!"
+    IDS_RASALERTPROMPT2     "Could not find RasEnumEntries or RasEnumConnections!"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_MNU_PICKICON        "Pick the icon of this shortcut"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_MNU_ASSIGNTHIS      "Assign the picked icon to this shortcut"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// French (France) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRA)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_UNCHECKED           ICON    DISCARDABLE     "res\\unchecked.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPTIONS DIALOG DISCARDABLE  0, 0, 210, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "FavOrg options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Internet connection",IDC_STATIC,7,7,124,50,WS_GROUP
+    LTEXT           "&Timeout (seconds)",IDC_STATIC,14,21,71,8,NOT WS_GROUP
+    EDITTEXT        IDC_EDTIMEOUT,85,19,21,12,ES_AUTOHSCROLL
+    CONTROL         "&Do not test connection",IDC_NOCONNECTIONTEST,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,36,93,10
+    DEFPUSHBUTTON   "OK",IDOK,153,7,50,14,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,153,24,50,14
+    PUSHBUTTON      "&Help",IDHELP,153,41,50,14
+    PUSHBUTTON      "&Change favicons folder...",IDC_SELFOLDER,7,71,101,17,
+                    WS_GROUP
+END
+
+IDD_EDITURL DIALOG DISCARDABLE  0, 0, 279, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit URL"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_REFNAME,7,7,265,9
+    EDITTEXT        IDC_URLED,7,23,265,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,162,50,50,14,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,222,50,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_EDITURL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 272
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\FavOrg.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // French (France) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\FavOrg.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

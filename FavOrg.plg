@@ -1,0 +1,81 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: FavOrg - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x40c /fo"Release/FavOrg.res" /d "NDEBUG" "C:\-= My Stuff =-\-= programs =-\FavOrg\FavOrg.rc"" 
+Creating temporary file "C:\DOCUME~1\User1\LOCALS~1\Temp\RSP665.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /Fp"Release/FavOrg.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\-= My Stuff =-\-= programs =-\FavOrg\ByStateDlg.cpp"
+"C:\-= My Stuff =-\-= programs =-\FavOrg\EditUrlDlg.cpp"
+"C:\-= My Stuff =-\-= programs =-\FavOrg\FavOrg.cpp"
+"C:\-= My Stuff =-\-= programs =-\FavOrg\FavOrgDoc.cpp"
+"C:\-= My Stuff =-\-= programs =-\FavOrg\FavOrgTreeCtl.cpp"
+"C:\-= My Stuff =-\-= programs =-\FavOrg\FavOrgView.cpp"
+"C:\-= My Stuff =-\-= programs =-\FavOrg\LegendDlg.cpp"
+"C:\-= My Stuff =-\-= programs =-\FavOrg\MainFrm.cpp"
+"C:\-= My Stuff =-\-= programs =-\FavOrg\MultiselTreeCtrl.cpp"
+"C:\-= My Stuff =-\-= programs =-\FavOrg\OptionsDlg.cpp"
+"C:\-= My Stuff =-\-= programs =-\FavOrg\SelIconDlg.cpp"
+"C:\-= My Stuff =-\-= programs =-\FavOrg\StringExt.cpp"
+"C:\-= My Stuff =-\-= programs =-\FavOrg\TreeCtrlEdit.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\User1\LOCALS~1\Temp\RSP665.tmp" 
+Creating temporary file "C:\DOCUME~1\User1\LOCALS~1\Temp\RSP666.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /Fp"Release/FavOrg.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\-= My Stuff =-\-= programs =-\FavOrg\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\User1\LOCALS~1\Temp\RSP666.tmp" 
+Creating temporary file "C:\DOCUME~1\User1\LOCALS~1\Temp\RSP667.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/FavOrg.pdb" /machine:I386 /out:"Release/FavOrg.exe" /IGNORE:4089 /IGNORE:4089 /IGNORE:4089 /IGNORE:4089 /IGNORE:4089 /IGNORE:4089 /IGNORE:4089 /IGNORE:4089 /IGNORE:4089 /IGNORE:4089 
+".\Release\ByStateDlg.obj"
+".\Release\EditUrlDlg.obj"
+".\Release\FavOrg.obj"
+".\Release\FavOrgDoc.obj"
+".\Release\FavOrgTreeCtl.obj"
+".\Release\FavOrgView.obj"
+".\Release\LegendDlg.obj"
+".\Release\MainFrm.obj"
+".\Release\MultiselTreeCtrl.obj"
+".\Release\OptionsDlg.obj"
+".\Release\SelIconDlg.obj"
+".\Release\StdAfx.obj"
+".\Release\StringExt.obj"
+".\Release\TreeCtrlEdit.obj"
+".\Release\FavOrg.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\User1\LOCALS~1\Temp\RSP667.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+ByStateDlg.cpp
+EditUrlDlg.cpp
+FavOrg.cpp
+FavOrgDoc.cpp
+FavOrgTreeCtl.cpp
+FavOrgView.cpp
+LegendDlg.cpp
+MainFrm.cpp
+MultiselTreeCtrl.cpp
+OptionsDlg.cpp
+SelIconDlg.cpp
+StringExt.cpp
+TreeCtrlEdit.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+FavOrg.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

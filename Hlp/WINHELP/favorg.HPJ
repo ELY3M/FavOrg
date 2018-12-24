@@ -1,0 +1,37 @@
+
+[OPTIONS]
+ERRORLOG=favorg.ERR
+COMPRESS=0x1
+LCID=0x0409 0x0 0x0
+CONTENTS=HIDR_MAINFRAME
+INDEX_SEPARATORS=","
+TITLE=FavOrg Application Help
+COPYRIGHT=FormWhiz Version 1.0  Copyright © 2000, Ziff Davis Media, Inc.
+CNT=FAVORG.CNT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[WINDOWS]
+main="FavOrg Help",(154,205,717,614),0x7604,(255,255,234),(128,255,255),0
+
+[FILES]
+favorg.RTF
+
+[MAP]
+#include <FAVORGHLP.H>
+
+[CONFIG]
+BrowseButtons ()

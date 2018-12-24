@@ -1,0 +1,39 @@
+# Microsoft Developer Studio Generated Dependency File, included by FavOrg.mak
+
+.\FavOrg.cpp : \
+	".\FavOrg.h"\
+	".\FavOrgDoc.h"\
+	".\FavOrgView.h"\
+	".\MainFrm.h"\
+	".\StdAfx.h"\
+	
+
+.\FavOrg.rc : \
+	".\res\FavOrg.ico"\
+	".\res\FavOrg.rc2"\
+	".\res\FavOrgDoc.ico"\
+	".\res\Toolbar.bmp"\
+	
+
+.\FavOrgDoc.cpp : \
+	".\FavOrg.h"\
+	".\FavOrgDoc.h"\
+	".\StdAfx.h"\
+	
+
+.\FavOrgView.cpp : \
+	".\FavOrg.h"\
+	".\FavOrgDoc.h"\
+	".\FavOrgView.h"\
+	".\StdAfx.h"\
+	
+
+.\MainFrm.cpp : \
+	".\FavOrg.h"\
+	".\MainFrm.h"\
+	".\StdAfx.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

@@ -1,0 +1,15 @@
+;Codewright Project Space File (do not remove or modify this line)
+[State]
+StateWindowFrame=140,132,1127,829,0x4bad7fee
+_StateHistory=PROJECTS,'.\FavOrg.pjt'
+_RestoreProject='.\FavOrg.pjt'
+ProjSpaceFlags=0x00000000, 1
+
+[Project]
+ConfigSetUserWorkspace='D:\DevStudio\Projects\FavOrg\FavOrg.dsw'
+ConfigSetUserWorkspaceParser='Microsoft MSDEV 6.0'
+ConfigSetUserWorkspaceTimeStamp=0
+ConfigSetUserWorkspaceAutoSync=1
+
+[Project.".\FavOrg.pjt"]
+
